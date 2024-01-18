@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="485.0" prefWidth="864.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.emrcopy.PatientHistoryController">
+    <children>
+        <SplitPane dividerPositions="0.26509287925696595" layoutX="95.0" layoutY="51.0" prefHeight="485.0" prefWidth="864.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="483.0" prefWidth="235.0" style="-fx-background-color: CCE5FF;">
+                    <children>
+                        <ListView layoutX="14.0" layoutY="220.0" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: CCE5FF;" />
+                        <ListView layoutX="14.0" layoutY="270.0" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: CCE5FF;" />
+                        <ListView layoutX="14.0" layoutY="320.0" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: CCE5FF;" />
+                        <ListView layoutX="14.0" layoutY="370.0" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: CCE5FF;" />
+                        <Label alignment="CENTER" layoutX="27.0" layoutY="176.0" text="Dr. Steven Strange">
+                            <font>
+                                <Font name="Times New Roman Bold" size="22.0" />
+                            </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="55.0" layoutY="202.0" text="Endocrinologist">
+                            <font>
+                                <Font name="Times New Roman" size="18.0" />
+                            </font>
+                        </Label>
+                        <Hyperlink fx:id="dashboard" layoutX="62.0" layoutY="254.0" onAction="#dash" text="Dashboard" textFill="#2e0909">
+                            <font>
+                                <Font name="Times New Roman Bold" size="20.0" />
+                            </font>
+                        </Hyperlink>
+                        <Hyperlink fx:id="schedule" layoutX="69.0" layoutY="295.0" onAction="#sche" text="Schedule" textFill="#2e0909">
+                            <font>
+                                <Font name="Times New Roman Bold" size="20.0" />
+                            </font>
+                        </Hyperlink>
+                        <Hyperlink fx:id="profile" layoutX="80.0" layoutY="338.0" onAction="#pro" text="Profile" textFill="#2e0909">
+                            <font>
+                                <Font name="Times New Roman Bold" size="20.0" />
+                            </font>
+                        </Hyperlink>
+                        <Hyperlink fx:id="setting" layoutX="76.0" layoutY="379.0" onAction="#set" text="Support" textFill="#2e0909">
+                            <font>
+                                <Font name="Times New Roman Bold" size="20.0" />
+                            </font>
+                        </Hyperlink>
+                        <Hyperlink fx:id="logout" layoutX="14.0" layoutY="445.0" onAction="#logOut" text="Log out" textFill="#2e0909">
+                            <font>
+                                <Font name="Times New Roman Bold" size="15.0" />
+                            </font>
+                        </Hyperlink>
+                        <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="65.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" style="-fx-border-size: 2; -fx-border-color: black; -fx-border-radius: 25;">
+                            <image>
+                                <Image url="@../img/doctor.jpg" />
+                            </image>
+                        </ImageView>
+                    </children>
+                </AnchorPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                    <children>
+                        <HBox layoutX="14.0" layoutY="14.0" prefHeight="32.0" prefWidth="267.0">
+                            <children>
+                                <Button fx:id="btn1" alignment="CENTER" mnemonicParsing="false" onAction="#open_pov" prefHeight="31.0" prefWidth="84.0" style="-fx-background-radius: 50;" text="Overview">
+                                    <font>
+                                        <Font name="Times New Roman" size="11.0" />
+                                    </font>
+                                </Button>
+                                <Button fx:id="btn2" alignment="CENTER" mnemonicParsing="false" onAction="#open_schedule" prefHeight="31.0" prefWidth="84.0" style="-fx-background-radius: 50;" text="Schedule">
+                                    <font>
+                                        <Font name="Times New Roman" size="11.0" />
+                                    </font>
+                                </Button>
+                                <Button fx:id="btn3" alignment="CENTER" mnemonicParsing="false" onAction="#open_record" prefHeight="31.0" prefWidth="84.0" style="-fx-background-radius: 50;" text="Patient">
+                                    <font>
+                                        <Font name="Times New Roman" size="11.0" />
+                                    </font>
+                                </Button>
+                            </children>
+                        </HBox>
+                        <Pane layoutX="14.0" layoutY="46.0" prefHeight="118.0" prefWidth="605.0">
+                            <children>
+                                <Label fx:id="overviewNameNricLabel" layoutX="134.0" layoutY="14.0" prefHeight="20.0" prefWidth="291.0" text="Name:">
+                                    <font>
+                                        <Font name="Times New Roman Bold" size="18.0" />
+                                    </font>
+                                </Label>
+                                <Label layoutX="134.0" layoutY="43.0" text="DOB:">
+                                    <font>
+                                        <Font name="Times New Roman" size="14.0" />
+                                    </font>
+                                </Label>
+                                <Label layoutX="134.0" layoutY="68.0" text="Sex:">
+                                    <font>
+                                        <Font name="Times New Roman" size="14.0" />
+                                    </font>
+                                </Label>
+                                <Label layoutX="132.0" layoutY="96.0" text="Tel No: ">
+                                    <font>
+                                        <Font name="Times New Roman" size="14.0" />
+                                    </font>
+                                </Label>
+                                <Label layoutX="392.0" layoutY="43.0" text="Age: ">
+                                    <font>
+                                        <Font name="Times New Roman" size="14.0" />
+                                    </font>
+                                </Label>
+                                <Label layoutX="392.0" layoutY="67.0" text="Height (cm) : ">
+                                    <font>
+                                        <Font name="Times New Roman" size="14.0" />
+                                    </font>
+                                </Label>
+                                <Label layoutX="392.0" layoutY="95.0" text="Weight (kg) : ">
+                                    <font>
+                                        <Font name="Times New Roman" size="14.0" />
+                                    </font>
+                                </Label>
+                                <TextField fx:id="dobTextField" editable="false" layoutX="179.0" layoutY="39.0" minHeight="20.0" prefHeight="20.0" prefWidth="139.0" />
+                                <TextField fx:id="telnoTextField" editable="false" layoutX="179.0" layoutY="94.0" minHeight="20.0" prefHeight="20.0" prefWidth="139.0" />
+                                <TextField fx:id="sexTextField" editable="false" layoutX="179.0" layoutY="66.0" minHeight="20.0" prefHeight="20.0" prefWidth="139.0" />
+                                <TextField fx:id="ageTextField" editable="false" layoutX="477.0" layoutY="41.0" minHeight="20.0" prefHeight="20.0" prefWidth="129.0" />
+                                <TextField fx:id="heightTextField" editable="false" layoutX="477.0" layoutY="66.0" minHeight="20.0" prefHeight="20.0" prefWidth="129.0" />
+                                <TextField fx:id="weightTextField" editable="false" layoutX="477.0" layoutY="93.0" minHeight="20.0" prefHeight="20.0" prefWidth="129.0" />
+                                <Button fx:id="editInfoButton" layoutX="540.0" layoutY="2.0" mnemonicParsing="false" onAction="#editInfoButtonClicked" text="Edit" />
+                        <ImageView fx:id="patientPfpImageview" fitHeight="118.0" fitWidth="115.0" layoutX="14.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true" />
+                            </children>
+                        </Pane>
+                        <StackPane layoutX="19.0" layoutY="175.0" prefHeight="308.0" prefWidth="596.0">
+                            <children>
+                                <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE">
+                                    <tabs>
+                                        <Tab text="Diagnosis">
+                                            <content>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                    <children>
+                                                        <TableView fx:id="diagnosisTable" prefHeight="177.0" prefWidth="596.0" AnchorPane.bottomAnchor="102.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                            <columns>
+                                                                <TableColumn fx:id="dateColumn" prefWidth="75.0" text="Date" />
+                                                                <TableColumn fx:id="DiagnosisCodeColumn" prefWidth="114.0000228881836" text="Diagnosis Code" />
+                                                                <TableColumn fx:id="DiagnosisDescriptionColumn" prefWidth="403.33338928222656" text="Description" />
+                                                            </columns>
+                                                        </TableView>
+                                                        <Label layoutX="54.0" layoutY="188.0" prefHeight="17.0" prefWidth="58.0" text="Date       :" />
+                                                        <Label layoutX="14.0" layoutY="225.0" prefHeight="17.0" prefWidth="96.0" text="Diagnosis Code  :" />
+                                                        <Label layoutX="314.0" layoutY="188.0" text="Description :" />
+                                                        <TextField fx:id="DiagnosisDescription" layoutX="381.0" layoutY="184.0" prefHeight="41.0" prefWidth="200.0" />
+                                                        <Button fx:id="AddDiagnosis" layoutX="430.0" layoutY="246.0" mnemonicParsing="false" onAction="#DiagnosisAddButtonClicked" prefHeight="25.0" prefWidth="70.0" text="+ ADD" />
+                                                        <Button fx:id="editButton" layoutX="525.0" layoutY="246.0" mnemonicParsing="false" onAction="#DiagnosisEditButtonClicked" prefHeight="25.0" prefWidth="47.0" text="Edit" />
+                                          <DatePicker fx:id="DiagnosisDatePicker" layoutX="112.0" layoutY="184.0" prefHeight="27.0" prefWidth="160.0" />
+                                          <ComboBox fx:id="diagnosisComboBox" layoutX="112.0" layoutY="220.0" prefHeight="27.0" prefWidth="160.0" />
+                                                    </children>
+                                                </AnchorPane>
+                                            </content>
+                                        </Tab>
+                                        <Tab text="Reports">
+                                            <content>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                    <children>
+                                                        <TableView fx:id="reportTable" prefHeight="186.0" prefWidth="596.0" AnchorPane.bottomAnchor="93.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                            <columns>
+                                                                <TableColumn fx:id="reportDateColumn" prefWidth="75.0" text="Date" />
+                                                                <TableColumn fx:id="reportCodeColumn" prefWidth="90.66670989990234" text="Report Code" />
+                                                                <TableColumn fx:id="reportDescriptionColumn" prefWidth="427.3333282470703" text="Description" />
+                                                            </columns>
+                                                        </TableView>
+                                                        <TextField fx:id="reportDescription" layoutX="392.0" layoutY="193.0" prefHeight="40.0" prefWidth="178.0" />
+                                                        <TextField fx:id="reportCode" layoutX="107.0" layoutY="229.0" />
+                                                        <Label layoutX="36.0" layoutY="197.0" prefHeight="17.0" prefWidth="67.0" text="Date           :" />
+                                                        <Label layoutX="23.0" layoutY="233.0" prefHeight="17.0" prefWidth="80.0" text="Report Code  :" />
+                                                        <Label layoutX="321.0" layoutY="197.0" prefHeight="17.0" prefWidth="70.0" text="Description :" />
+                                                        <Button fx:id="ReportAdd" layoutX="427.0" layoutY="242.0" mnemonicParsing="false" onAction="#reportAddButtonClicked" prefHeight="25.0" prefWidth="70.0" text="+ ADD" />
+                                                        <Button fx:id="ReportEdit" layoutX="522.0" layoutY="242.0" mnemonicParsing="false" onAction="#reportEditButtonClicked" prefHeight="25.0" prefWidth="47.0" text="Edit" />
+                                          <DatePicker fx:id="reportDatePicker" layoutX="107.0" layoutY="193.0" prefHeight="25.0" prefWidth="150.0" />
+                                                    </children>
+                                                </AnchorPane>
+                                            </content>
+                                        </Tab>
+                                        <Tab text="Treatment">
+                                            <content>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                    <children>
+                                                        <TableView fx:id="treatTable" layoutX="6.0" prefHeight="156.0" prefWidth="596.0" AnchorPane.bottomAnchor="123.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                            <columns>
+                                                                <TableColumn fx:id="treatStartDateColumn" prefWidth="73.99998664855957" text="Start Date" />
+                                                                <TableColumn fx:id="treatEndDateColumn" prefWidth="74.6666488647461" text="End Date " />
+                                                                <TableColumn fx:id="treatCodeColumn" prefWidth="101.33332824707031" text="Medication Code" />
+                                                                <TableColumn fx:id="treatNameColumn" prefWidth="155.33340454101562" text="Medication Name" />
+                                                                <TableColumn fx:id="DosageColumn" prefWidth="48.00006103515625" text="Dosage" />
+                                                                <TableColumn fx:id="treatDescriptionColumn" prefWidth="149.99990844726562" text="Description" />
+                                                            </columns>
+                                                        </TableView>
+                                                        <TextField fx:id="treatDosage" layoutX="105.0" layoutY="240.0" prefHeight="25.0" prefWidth="96.0" />
+                                                        <TextField fx:id="treatCode" layoutX="323.0" layoutY="163.0" />
+                                                        <TextField fx:id="treatName" layoutX="323.0" layoutY="204.0" />
+                                                        <TextField fx:id="treatDescription" layoutX="323.0" layoutY="237.0" prefHeight="32.0" prefWidth="149.0" />
+                                                        <Label layoutX="24.0" layoutY="167.0" prefHeight="17.0" prefWidth="79.0" text="Start Date      :" />
+                                                        <Label layoutX="24.0" layoutY="208.0" prefHeight="17.0" prefWidth="79.0" text="End Date        :" />
+                                                        <Label layoutX="215.0" layoutY="167.0" prefHeight="17.0" prefWidth="107.0" text="Medication Code  :" />
+                                                        <Label layoutX="24.0" layoutY="244.0" prefHeight="17.0" prefWidth="79.0" text="Dosage          :" />
+                                                        <Label layoutX="215.0" layoutY="208.0" prefHeight="17.0" prefWidth="107.0" text="Medication Name :" />
+                                                        <Label layoutX="215.0" layoutY="244.0" prefHeight="17.0" prefWidth="107.0" text="Description           :" />
+                                                        <Button fx:id="treatAddBtn" layoutX="515.0" layoutY="224.0" mnemonicParsing="false" onAction="#addTreatBtnAction" prefHeight="25.0" prefWidth="59.0" text="+ ADD" />
+                                                        <Button fx:id="treatEditBtn" layoutX="515.0" layoutY="184.0" mnemonicParsing="false" onAction="#TreatEditBtnClicked" prefHeight="25.0" prefWidth="59.0" text="Edit" />
+                                          <DatePicker fx:id="startDatePicker" layoutX="105.0" layoutY="163.0" prefHeight="25.0" prefWidth="96.0" />
+                                          <DatePicker fx:id="endDatePicker" layoutX="105.0" layoutY="204.0" prefHeight="25.0" prefWidth="96.0" />
+                                                    </children>
+                                                </AnchorPane>
+                                            </content>
+                                        </Tab>
+                                        <Tab text="Medical History">
+                                            <content>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                    <children>
+                                                        <TableView fx:id="medicalTable" prefHeight="150.0" prefWidth="596.0">
+                                                            <columns>
+                                                                <TableColumn fx:id="mDateColumn" prefWidth="82.00004768371582" text="Date" />
+                                                                <TableColumn fx:id="mProblemColumn" prefWidth="137.33333587646484" text="Problems" />
+                                                                <TableColumn fx:id="mTreatmentColumn" prefWidth="132.6666717529297" text="Treatment Given" />
+                                                                <TableColumn fx:id="mDescriptionColumn" prefWidth="240.66665649414062" text="Description" />
+                                                            </columns>
+                                                        </TableView>
+                                                        <TextField fx:id="mProblem" layoutX="90.0" layoutY="206.0" prefHeight="25.0" prefWidth="178.0" />
+                                                        <TextField fx:id="mTreatment" layoutX="90.0" layoutY="240.0" prefHeight="25.0" prefWidth="178.0" />
+                                                        <TextField fx:id="mDescription" layoutX="384.0" layoutY="165.0" prefHeight="50.0" prefWidth="200.0" />
+                                                        <Label layoutX="23.0" layoutY="169.0" prefHeight="17.0" prefWidth="67.0" text="Date           :" />
+                                                        <Label layoutX="24.0" layoutY="210.0" prefHeight="17.0" prefWidth="67.0" text="Problems   :" />
+                                                        <Label layoutX="24.0" layoutY="244.0" prefHeight="17.0" prefWidth="67.0" text="Treatment  :" />
+                                                        <Label layoutX="298.0" layoutY="169.0" prefHeight="17.0" prefWidth="89.0" text="Description      :" />
+                                                        <Button fx:id="mEditBtn" layoutX="534.0" layoutY="240.0" mnemonicParsing="false" onAction="#mEditBtnClicked" prefHeight="25.0" prefWidth="47.0" text="Edit" />
+                                                        <Button fx:id="mAddBtn" layoutX="450.0" layoutY="240.0" mnemonicParsing="false" onAction="#mAddBtnClicked" prefHeight="25.0" prefWidth="67.0" text="+ ADD" />
+                                          <DatePicker fx:id="mDatePicker" layoutX="90.0" layoutY="165.0" prefHeight="25.0" prefWidth="178.0" />
+                                                    </children>
+                                                </AnchorPane>
+                                            </content>
+                                        </Tab>
+                                        <Tab text="Notes">
+                                            <content>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                    <children>
+                                                        <TextArea fx:id="Field" layoutX="14.0" layoutY="14.0" prefHeight="258.0" prefWidth="455.0" />
+                                                        <Button layoutX="480.0" layoutY="231.0" mnemonicParsing="false" onAction="#saveAttachment" prefHeight="25.0" prefWidth="101.0" text="Save Attachment">
+                                                            <font>
+                                                                <Font name="Times New Roman" size="12.0" />
+                                                            </font>
+                                                        </Button>
+                                                    </children>
+                                                </AnchorPane>
+                                            </content>
+                                        </Tab>
+                                    </tabs>
+                                </TabPane>
+                            </children>
+                        </StackPane>
+                    </children>
+                </AnchorPane>
+            </items>
+        </SplitPane>
+    </children>
+</AnchorPane>

@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="485.0" prefWidth="864.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.emrcopy.DashboardController">
+    <children>
+        <SplitPane dividerPositions="0.26509287925696595">
+            <items>
+                <AnchorPane prefHeight="483.0" prefWidth="254.0" style="-fx-background-color: CCE5FF;">
+                    <children>
+                        <ListView layoutX="14.0" layoutY="270.0" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: CCE5FF;" />
+                        <ListView layoutY="320.0" prefHeight="50.0" prefWidth="267.0" style="-fx-background-color: CCE5FF;" />
+                        <ListView layoutX="14.0" layoutY="370.0" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: CCE5FF;" />
+                        <ListView layoutX="14.0" layoutY="220.0" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: CCE5FF;" />
+                        <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="85.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../img/doctor.jpg" />
+                            </image>
+                        </ImageView>
+                        <Label alignment="CENTER" layoutX="44.0" layoutY="173.0" prefHeight="26.0" prefWidth="186.0" text="Dr. Steven Strange">
+                            <font>
+                                <Font name="Times New Roman Bold" size="22.0" />
+                            </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="73.0" layoutY="200.0" prefHeight="16.0" prefWidth="121.0" text="Endocrinologist">
+                            <font>
+                                <Font name="Times New Roman" size="18.0" />
+                            </font>
+                        </Label>
+                        <Hyperlink fx:id="dashboard" layoutX="80.0" layoutY="254.0" onAction="#dash" text="Dashboard" textFill="#1b1919">
+                            <font>
+                                <Font name="Times New Roman Bold" size="20.0" />
+                            </font>
+                        </Hyperlink>
+                        <Hyperlink fx:id="schedule" layoutX="89.0" layoutY="295.0" onAction="#sche" text="Schedule" textFill="#1b1919">
+                            <font>
+                                <Font name="Times New Roman Bold" size="20.0" />
+                            </font>
+                        </Hyperlink>
+                        <Hyperlink fx:id="profile" layoutX="98.0" layoutY="338.0" onAction="#pro" text="Profile" textFill="#1b1919">
+                            <font>
+                                <Font name="Times New Roman Bold" size="20.0" />
+                            </font>
+                        </Hyperlink>
+                        <Hyperlink fx:id="setting" layoutX="93.0" layoutY="379.0" onAction="#set" text="Support" textFill="#1b1919">
+                            <font>
+                                <Font name="Times New Roman Bold" size="20.0" />
+                            </font>
+                        </Hyperlink>
+                        <Hyperlink fx:id="logout" layoutX="14.0" layoutY="444.0" onAction="#logOut" text="Log out" textFill="#1b1919">
+                            <font>
+                                <Font name="Times New Roman Bold" size="15.0" />
+                            </font>
+                        </Hyperlink>
+                    </children>
+                </AnchorPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="483.0" prefWidth="621.0">
+                    <children>
+                        <HBox layoutX="14.0" layoutY="14.0" prefHeight="32.0" prefWidth="290.0">
+                            <children>
+                                <Button fx:id="btn1" alignment="CENTER" mnemonicParsing="false" onAction="#open_pov" prefHeight="31.0" prefWidth="84.0" style="-fx-background-radius: 50;" text="Overview" textAlignment="JUSTIFY">
+                                    <font>
+                                        <Font name="Times New Roman" size="12.0" />
+                                    </font></Button>
+                                <Button fx:id="btn2" alignment="CENTER" mnemonicParsing="false" onAction="#open_schedule" prefHeight="31.0" prefWidth="84.0" style="-fx-background-radius: 50;" text="Schedule" textAlignment="JUSTIFY">
+                                    <font>
+                                        <Font name="Times New Roman" size="12.0" />
+                                    </font></Button>
+                                <Button fx:id="btn3" alignment="CENTER" mnemonicParsing="false" onAction="#open_record" prefHeight="31.0" prefWidth="84.0" style="-fx-background-radius: 50;" text="Patient" textAlignment="JUSTIFY">
+                                    <font>
+                                        <Font name="Times New Roman" size="12.0" />
+                                    </font>
+                                </Button>
+                            </children>
+                        </HBox>
+                        <HBox layoutX="370.0" layoutY="46.0" prefHeight="25.0" prefWidth="186.0" style="-fx-background-color: WHITE;">
+                            <children>
+                                <Button mnemonicParsing="false" onAction="#backOneMonth" style="-fx-background-color: WHITE;" text="&lt;" />
+                                <Text fx:id="year" strokeType="OUTSIDE" strokeWidth="0.0" text="####" textAlignment="CENTER" wrappingWidth="52.02606391906738" />
+                                <Text fx:id="month" strokeType="OUTSIDE" strokeWidth="0.0" text="####" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="68.6927547454834" />
+                                <Button mnemonicParsing="false" onAction="#forwardOneMonth" prefHeight="13.0" prefWidth="25.0" style="-fx-background-color: WHITE;" text="&gt;" textFill="#0b0b0b" />
+                            </children>
+                        </HBox>
+                        <TableView layoutX="370.0" layoutY="242.0" prefHeight="216.0" prefWidth="186.0">
+                            <columns>
+                                <TableColumn prefWidth="184.6666259765625" text="Today's Appointment" />
+                            </columns>
+                        </TableView>
+                        <AnchorPane layoutX="31.0" layoutY="67.0" prefHeight="63.0" prefWidth="139.0" style="-fx-background-color: CCE5FF;">
+                            <children>
+                                <Label alignment="CENTER" layoutX="16.0" layoutY="1.0" prefHeight="25.0" prefWidth="112.0" text="Appointments" textOverrun="WORD_ELLIPSIS">
+                                    <font>
+                                        <Font name="Times New Roman Bold" size="16.0" />
+                                    </font>
+                                </Label>
+                                <Text layoutX="62.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="10" textAlignment="CENTER">
+                                    <font>
+                                        <Font name="Times New Roman Bold" size="20.0" />
+                                    </font>
+                                </Text>
+                            </children>
+                            <effect>
+                                <InnerShadow />
+                            </effect>
+                        </AnchorPane>
+                        <AnchorPane layoutX="31.0" layoutY="161.0" prefHeight="63.0" prefWidth="139.0" style="-fx-background-color: CCE5FF;">
+                            <effect>
+                                <InnerShadow />
+                            </effect>
+                            <children>
+                                <Label alignment="CENTER" layoutX="32.0" layoutY="1.0" prefHeight="25.0" prefWidth="75.0" text="Surgeries" textOverrun="WORD_ELLIPSIS">
+                                    <font>
+                                        <Font name="Times New Roman Bold" size="16.0" />
+                                    </font>
+                                </Label>
+                                <Text layoutX="64.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2" textAlignment="CENTER">
+                                    <font>
+                                        <Font name="Times New Roman Bold" size="20.0" />
+                                    </font>
+                                </Text>
+                            </children>
+                        </AnchorPane>
+                        <AnchorPane layoutX="211.0" layoutY="67.0" prefHeight="63.0" prefWidth="139.0" style="-fx-background-color: CCE5FF;">
+                            <effect>
+                                <InnerShadow />
+                            </effect>
+                            <children>
+                                <Label alignment="CENTER" layoutX="22.0" layoutY="1.0" prefHeight="25.0" prefWidth="96.0" text="Consultancies" textOverrun="WORD_ELLIPSIS">
+                                    <font>
+                                        <Font name="Times New Roman Bold" size="16.0" />
+                                    </font>
+                                </Label>
+                                <Text layoutX="60.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="11" textAlignment="CENTER">
+                                    <font>
+                                        <Font name="Times New Roman Bold" size="20.0" />
+                                    </font>
+                                </Text>
+                            </children>
+                        </AnchorPane>
+                        <AnchorPane layoutX="211.0" layoutY="161.0" prefHeight="63.0" prefWidth="139.0" style="-fx-background-color: CCE5FF;">
+                            <effect>
+                                <InnerShadow />
+                            </effect>
+                            <children>
+                                <Label alignment="CENTER" layoutX="14.0" layoutY="1.0" prefHeight="25.0" prefWidth="112.0" text="Urgent Matters" textOverrun="WORD_ELLIPSIS">
+                                    <font>
+                                        <Font name="Times New Roman Bold" size="16.0" />
+                                    </font>
+                                </Label>
+                                <Text layoutX="63.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" textAlignment="CENTER">
+                                    <font>
+                                        <Font name="Times New Roman Bold" size="20.0" />
+                                    </font>
+                                </Text>
+                            </children>
+                        </AnchorPane>
+                        <FlowPane fx:id="calendar" layoutX="370.0" layoutY="92.0" prefHeight="150.0" prefWidth="186.0" style="-fx-background-color: WHITE;" />
+                        <HBox layoutX="370.0" layoutY="71.0" prefHeight="17.0" prefWidth="186.0" style="-fx-background-color: WHITE;">
+                            <children>
+                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Sun">
+                                    <HBox.margin>
+                                        <Insets right="5.0" />
+                                    </HBox.margin>
+                                    <font>
+                                        <Font size="11.0" />
+                                    </font>
+                                </Text>
+                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Mon">
+                                    <HBox.margin>
+                                        <Insets right="3.0" />
+                                    </HBox.margin>
+                                    <font>
+                                        <Font size="11.0" />
+                                    </font>
+                                </Text>
+                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Tue">
+                                    <HBox.margin>
+                                        <Insets right="3.0" />
+                                    </HBox.margin>
+                                    <font>
+                                        <Font size="11.0" />
+                                    </font>
+                                </Text>
+                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Wed">
+                                    <HBox.margin>
+                                        <Insets right="4.0" />
+                                    </HBox.margin>
+                                    <font>
+                                        <Font size="11.0" />
+                                    </font>
+                                </Text>
+                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Thur">
+                                    <HBox.margin>
+                                        <Insets right="6.0" />
+                                    </HBox.margin>
+                                    <font>
+                                        <Font size="11.0" />
+                                    </font>
+                                </Text>
+                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Fri">
+                                    <HBox.margin>
+                                        <Insets right="6.0" />
+                                    </HBox.margin>
+                                    <font>
+                                        <Font size="11.0" />
+                                    </font>
+                                </Text>
+                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Sat">
+                                    <HBox.margin>
+                                        <Insets right="7.0" />
+                                    </HBox.margin>
+                                    <font>
+                                        <Font size="11.0" />
+                                    </font>
+                                </Text>
+                            </children>
+                        </HBox>
+                        <ScrollPane layoutX="31.0" layoutY="266.0" prefHeight="192.0" prefWidth="325.0">
+                            <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="202.0" prefWidth="303.0">
+                                    <children>
+                                        <ListView layoutX="8.0" layoutY="14.0" prefHeight="50.0" prefWidth="287.0" />
+                                        <ListView layoutX="8.0" layoutY="82.0" prefHeight="50.0" prefWidth="287.0" />
+                                        <ListView layoutX="8.0" layoutY="150.0" prefHeight="50.0" prefWidth="287.0" />
+                                        <Label layoutX="14.0" layoutY="14.0" prefHeight="17.0" prefWidth="112.0" text="27th Apr, 1715">
+                                            <font>
+                                                <Font name="Times New Roman" size="13.0" />
+                                            </font>
+                                        </Label>
+                                        <Label layoutX="14.0" layoutY="30.0" prefHeight="17.0" prefWidth="174.0" text="System maintenance">
+                                            <font>
+                                                <Font name="Times New Roman Bold" size="13.0" />
+                                            </font>
+                                        </Label>
+                                        <Label layoutX="14.0" layoutY="47.0" prefHeight="17.0" prefWidth="75.0" text="Administrator">
+                                            <font>
+                                                <Font name="Times New Roman" size="11.0" />
+                                            </font>
+                                        </Label>
+                                        <Label layoutX="14.0" layoutY="81.0" prefHeight="17.0" prefWidth="112.0" text="01st Apr, 0800">
+                                            <font>
+                                                <Font name="Times New Roman" size="13.0" />
+                                            </font>
+                                        </Label>
+                                        <Label layoutX="14.0" layoutY="97.0" prefHeight="17.0" prefWidth="267.0" text="Annual GM for all Doctors @30th March 0800">
+                                            <font>
+                                                <Font name="Times New Roman Bold" size="13.0" />
+                                            </font>
+                                        </Label>
+                                        <Label layoutX="14.0" layoutY="114.0" prefHeight="17.0" prefWidth="75.0" text="Hospital">
+                                            <font>
+                                                <Font name="Times New Roman" size="11.0" />
+                                            </font>
+                                        </Label>
+                                        <Label layoutX="14.0" layoutY="150.0" prefHeight="17.0" prefWidth="112.0" text="25th Mar, 1715">
+                                            <font>
+                                                <Font name="Times New Roman" size="13.0" />
+                                            </font>
+                                        </Label>
+                                        <Label layoutX="14.0" layoutY="166.0" prefHeight="17.0" prefWidth="224.0" text="System updates for upgrade purposes">
+                                            <font>
+                                                <Font name="Times New Roman Bold" size="13.0" />
+                                            </font>
+                                        </Label>
+                                        <Label layoutX="14.0" layoutY="183.0" prefHeight="17.0" prefWidth="75.0" text="Administrator">
+                                            <font>
+                                                <Font name="Times New Roman" size="11.0" />
+                                            </font>
+                                        </Label>
+                                    </children>
+                                </AnchorPane>
+                            </content>
+                        </ScrollPane>
+                        <Label layoutX="31.0" layoutY="245.0" prefHeight="19.0" prefWidth="186.0" text="Latest Announcement:">
+                            <font>
+                                <Font name="Times New Roman Bold" size="16.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </AnchorPane>
+            </items>
+        </SplitPane>
+    </children>
+</AnchorPane>
